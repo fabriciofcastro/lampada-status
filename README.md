@@ -1,4 +1,4 @@
-# Mini projeto que mudar o estado da imagem de uma lâmpada, desligada para ligada
+# Mini projeto que muda o estado da imagem de uma lâmpada
 
 ## O projeto consiste em três imagens de lâmpada, acesa, apagada e quebrada quando clicada.
 
