@@ -1,6 +1,6 @@
-#### Projeto mudar o estado da lâmpada
+#### Mini projeto que mudar o estado da imagem de uma lâmpada, desligada para ligada
 
-Praticando props e states do React. 
+# O projeto consiste em três imagens de lâmpada, acesa, apagada e quebrada quando clicada.
 
+## Objetivo exercitar React, utilizando hooks state, props, styled-components e typescript
 
-A idéai é ter estes conceitos bem fundamentado, este projeto da para fazer muitas melhores e implemetação.

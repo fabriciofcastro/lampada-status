@@ -1,41 +1,49 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
-import styles from '../styles/lampada.module.css'
-import Lampada from '../components/lampada'
 
-const Home: NextPage = () => {
+import Head from 'next/head'
+import { useState } from 'react'
+import Lampada from '../components/Lampada'
+import lampadaOff from '../public/image/desligada.png'
+import lampadaOn from '../public/image/ligada.png'
+import quebrada from '../public/image/quebrada.png'
+
+const Home: React.FC = () => {
+
+  const [status, setStatus] = useState<string>('desligada')
+  const [photo, setPhoto] = useState(lampadaOff)
+
+
+  function functionLigar() {
+    setStatus('ligada')
+    setPhoto(lampadaOn)
+  }
+
+  function functionQuebrada() {
+      setStatus ('quebrada')
+      setPhoto(quebrada)
+  }
+
+  function functionDesligar(){
+    setStatus('desligada')
+    setPhoto(lampadaOff)
+  }
+
   return (
-    <div className={styles.container}>
+    <>
       <Head>
-        <title>Estado da Lâmpada</title>
-        <meta name="description" content="Entendo melhor React" />
-        <link rel="icon" href="" />
+        <title>Create Next App</title>
       </Head>
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Mude o estado da lâmpada <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-        <Lampada />
-        
-      </main>
+      <main>
+        <Lampada status={status}
+                 functionLigar=    {functionLigar}
+                 functionDesligar= {functionDesligar}
+                 functionQuebrada= {functionQuebrada}
+                 photo={photo}
+        />
 
-      <footer className={styles.footer}>
-        <p>
-         Utilizando as vantagens do React, para alterar um estado da lampada, lanças 
-          informações para outro componente.
-        </p>
-        <a
-          href="https://github.com/fabriciofcastro"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Meu GitHub
-          
-        </a>
-      </footer>
-    </div>
+
+      </main>
+    </>
   )
 }
 
